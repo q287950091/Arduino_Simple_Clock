@@ -1,15 +1,14 @@
 #include <Wire.h>
 #include <SimpleDHT.h>
 #include <hd44780.h>
-#include <hd44780ioClass/hd44780_I2Cexp.h>
+#include <hd44780ioClass/hd44780_I2Cexp.h> //本資料庫不需自行輸入LCD記憶體位置
 
 hd44780_I2Cexp LCDO;  //一號屏幕
 hd44780_I2Cexp LCDT;  //二號屏幕
 SimpleDHT11 dht11;    //DHT11初始化
 //輔助函數
 byte temp = 23, rh = 50, l_rh = 0, l_temp = 0;
-byte degree[8] = {
-  //設置溫度符號
+byte degree[8] = {  //設置溫度符號
   B01100,
   B10010,
   B10010,
@@ -19,8 +18,7 @@ byte degree[8] = {
   B00000,
   B00000,
 };
-const char *week[] = {
-  //設置星期字串
+const char *week[] = {    //設置星期字串
   "_Sunday__",
   "_Monday__",
   "_Tuesday_",
@@ -29,8 +27,7 @@ const char *week[] = {
   "_Friday__",
   "Saturday_",
 };
-const char *dayloop[] = {
-  //設置晝夜字串
+const char *dayloop[] = {  //設置晝夜字串
   "AM",
   "PM",
 };
